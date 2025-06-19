@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+*{
+    margin: 0;
+}
+body{
+    font-family: "Roboto", sans-serif ;
+}
+.main{
+    max-width: 1400px;
+}
+header{
+    background-color: #FB8003;
+    padding: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.logo{
+    height: 40px;
+    width: auto;
+    padding-left: 20px;
+}
+
+
+.aot{
+    background-image: url("./assets/img/burger_titelbild.png");
+    height: 400px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+.logo-client{
+    position: absolute;
+    border-radius: 12px;
+    height: 80px;
+    width: auto;
+    left: 5%;
+    bottom: 5vh;
+}
+.our-restaurant{
+    padding: 20px;
+}
