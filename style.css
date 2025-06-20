@@ -10,6 +10,7 @@ body{
     background-color: #FB8003;
 }
 .main{
+    position: relative;
     margin: 0 auto;
     max-width: 1400px;
     background-color: white;
@@ -65,16 +66,37 @@ h5{
     gap: 20px;
 }
 .arrow-icon{
-    color: #fb7f0314;
+    color: #fb7f03;
     font-size: 32px;
 }
 .menu-img{
     position: relative;
     height: 100px;
-    width: calc(100% - 40px);
+    width: calc(100% - 20px);
     margin: 10px 20px;
     background-image: url("/assets/img/burger_titelbild.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.cart{
+    height: 100vh;
+    width: 200px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.cart h2{
+    text-align: center;
+}
+.divider-cart{
+    height: 1px;
+    width: 200px;
+    background-color: #80808045;
+    margin: 10px -20px;
 }
