@@ -17,7 +17,7 @@ body{
 }
 header {
     z-index: 5;
-    position: fixed;
+    position: relative;
     top: 0;
     background-color: #FB8003;
     padding: 20px;
@@ -84,9 +84,7 @@ h5{
     border-radius: 5px;
 }
 
-.cart{
-    position: sticky;
-    top: 0;
+.cart {
     height: 100vh;
     background-color: white;
     padding: 20px;
@@ -134,13 +132,13 @@ h5{
 }
 .cart-absolute {
     max-width: 350px;
-    position: fixed;
-    right: 0;
-    top: 84px;
+    position: sticky;
+    left: 100%;
+    top: 0;
     z-index: 1;
     width: 25%;
-    height: 100vh;
-}   
+    height: 0px;
+} 
 
 .meine-gerichte{
     display: flex;
