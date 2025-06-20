@@ -72,7 +72,7 @@ h5{
 .menu-img{
     position: relative;
     height: 100px;
-    width: calc(100% - 20px);
+    width: calc(100% - 240px);
     margin: 10px 20px;
     background-image: url("/assets/img/burger_titelbild.png");
     background-position: center;
