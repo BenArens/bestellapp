@@ -3,12 +3,17 @@
 
 *{
     margin: 0;
+    box-sizing: border-box;
 }
 body{
     font-family: "Roboto", sans-serif ;
+    background-color: #FB8003;
 }
 .main{
+    margin: 0 auto;
     max-width: 1400px;
+    background-color: white;
+    height: 100vh;
 }
 header{
     background-color: #FB8003;
@@ -60,6 +65,16 @@ h5{
     gap: 20px;
 }
 .arrow-icon{
-    color: #FB8003;
+    color: #fb7f0314;
     font-size: 32px;
+}
+.menu-img{
+    position: relative;
+    height: 100px;
+    width: calc(100% - 40px);
+    margin: 10px 20px;
+    background-image: url("/assets/img/burger_titelbild.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
