@@ -4,12 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bestellapp</title>
-    <script src="./script.js"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="./assets/img/icons/favicon.ico" type="image/x-icon">
     <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
 </head>
-<body>
+<body onload="renderGerichte()">
     <header class="header">
         <img class="logo" src="./assets/img/logo.png" alt="Logo Bestellapp">
     </header>
@@ -40,17 +39,15 @@
 
 
               <div class="menu-img"> </div>
-
-        <div class="gericht">
-          <div class="gericht-info" >
-            <h4 class="name-gericht">Pizza Krabben</h4>
-            <p class="beschreibung" >mit Krabben und Peperoni</p>
-            <span class="preis">9,50€</span>
-          </div> 
-          <i class='bx  bx-plus-circle plus-icon'></i> 
-        </div>
+        
+            <div id="gerichte"></div>
+        
+        
         </section>
       
     </div>
+    <script src="./script.js"></script>
+    <script src="./scripts/db.js"></script>
+    <script src="./scripts/template.js"></script>
 </body>
 </html>
