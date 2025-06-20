@@ -12,7 +12,6 @@ body{
 .main{
     position: relative;
     margin: 0 auto;
-    max-width: 1400px;
     background-color: white;
     height: 100vh;
 }
@@ -72,7 +71,6 @@ h5{
 .menu-img{
     position: relative;
     height: 100px;
-    width: calc(100% - 240px);
     margin: 10px 20px;
     background-image: url("./assets/img/burger_titelbild.png");
     background-position: center;
@@ -83,10 +81,6 @@ h5{
 
 .cart{
     height: 100vh;
-    width: 200px;
-    position: absolute;
-    right: 0;
-    top: 0;
     background-color: white;
     padding: 20px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -97,7 +91,6 @@ h5{
 }
 .divider-cart{
     height: 1px;
-    width: 200px;
     background-color: #80808045;
     margin: 10px -20px;
 }
@@ -105,7 +98,6 @@ h5{
 .gericht{
     position: relative;
     margin: 20px;
-    width: calc(100% - 240px);
     border: 1px solid #80808045;
     border-radius: 5px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -129,4 +121,17 @@ h5{
     font-size: 30px;
     color: #fb7f03;
     cursor: pointer;
+}
+.cart-absolute {
+    position: absolute;
+    right: 0;
+    top: 84px;
+    z-index: 1;
+    width: 25%;
+}
+
+.meine-gerichte{
+    display: flex;
+    flex-direction: column;
+    max-width: 75%;
 }
