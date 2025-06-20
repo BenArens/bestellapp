@@ -78,6 +78,7 @@ h5{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    border-radius: 5px;
 }
 
 .cart{
@@ -107,13 +108,14 @@ h5{
     width: calc(100% - 240px);
     border: 1px solid #80808045;
     border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .gericht-info{
     display: flex;
     flex-direction: column;
     gap: 10px;
-    padding: 10px;
+    padding: 18px;
 }
 .preis{
     color: #fb7f03;
@@ -124,7 +126,7 @@ h5{
     position: absolute;
     right: 10px;
     top: 10px;
-    font-size: 20px;
+    font-size: 30px;
     color: #fb7f03;
     cursor: pointer;
 }
