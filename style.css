@@ -15,6 +15,9 @@ header{
     padding: 20px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+h5{
+    color: grey;
+}
 .logo{
     height: 40px;
     width: auto;
@@ -24,7 +27,7 @@ header{
 
 .aot{
     background-image: url("./assets/img/burger_titelbild.png");
-    height: 400px;
+    height: 280px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -40,4 +43,23 @@ header{
 }
 .our-restaurant{
     padding: 20px;
+    
+}
+.our-restaurant-info{
+    display: flex;
+    gap: 20px;
+}
+.bewertungen{
+    color: #FB8003;
+}
+.menu{
+    display: flex;
+    padding: 5px 20px;
+    background-color: #fb7f031e;
+    align-items: center;
+    gap: 20px;
+}
+.arrow-icon{
+    color: #FB8003;
+    font-size: 32px;
 }
