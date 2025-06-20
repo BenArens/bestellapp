@@ -100,3 +100,31 @@ h5{
     background-color: #80808045;
     margin: 10px -20px;
 }
+
+.gericht{
+    position: relative;
+    margin: 20px;
+    width: calc(100% - 240px);
+    border: 1px solid #80808045;
+    border-radius: 5px;
+}
+
+.gericht-info{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+}
+.preis{
+    color: #fb7f03;
+    font-weight: bold;
+}
+
+.plus-icon{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 20px;
+    color: #fb7f03;
+    cursor: pointer;
+}
