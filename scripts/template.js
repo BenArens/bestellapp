@@ -7,7 +7,13 @@ function getGerichteTemplate(i){
             <p class="beschreibung" >${gerichte[i].description}</p>
             <span class="preis">${gerichte[i].price} €</span>
           </div> 
-          <i class='bx  bx-plus-circle plus-icon'></i>
+          <i onclick="addToCart(${i})" class='bx  bx-plus-circle plus-icon'></i>
     </div>
     `
+}
+
+function getCartTemplate(i){
+  return `
+               <div class="myOrder"><span class="gericht-cart">${cart[i].name} ${cart[i].quantity}</span></div>
+  `
 }
