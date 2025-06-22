@@ -15,9 +15,11 @@ function renderCart(){
     let cartRef = document.getElementById('cart');
     cartRef.innerHTML =''; 
      
-    
     for (let i = 0; i < cart.length; i++){
-        cartRef.innerHTML += getCartTemplate(i); 
+        if (cart[i].empty == false) {
+            cartRef.innerHTML += getCartTemplate(i);
+        }
+         
     }
 }
 
@@ -27,21 +29,20 @@ function addToCart(index){
 
     if (gerichte[index].added == false){
         gerichte[index].added = true;
-        gerichte[index].quantity++;
-        updateQuantity();
+        cart.push({name: gerichte[index].name, description: gerichte[index].description, price: gerichte[index].price, quantity: 0, empty: false});
+        updateQuantity(index);
     } else {
-        gerichte[index].quantity++
-        updateQuantity();
+        updateQuantity(index);
     }
     
     renderCart();
 }
 
- function updateQuantity(){
-    cart = [];
-    for (let index = 0; index < gerichte.length; index++) {
-        if (gerichte[index].added == true){
-            cart.push({name: gerichte[index].name, description: gerichte[index].description, price: gerichte[index].price, quantity: gerichte[index].quantity});
-        }
+ function updateQuantity(index){
+    // cart = [];
+    for (let i = 1; i < cart.length; i++) {
+        if (gerichte[index].added == true && gerichte[index].name === cart[i].name ){
+            cart[i].quantity++
+        } 
     }
  }
