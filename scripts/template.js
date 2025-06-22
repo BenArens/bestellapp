@@ -14,6 +14,6 @@ function getGerichteTemplate(i){
 
 function getCartTemplate(i){
   return `
-               <div class="myOrder"><span class="gericht-cart">${cart[i].name} ${cart[i].quantity}</span></div>
+         <div class="myOrder"><span class="gericht-cart">${cart[i].name} ${cart[i].quantity}</span></div>
   `
 }
