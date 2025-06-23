@@ -14,6 +14,7 @@ function getGerichteTemplate(i){
 
 function getCartTemplate(i){
   return `
-         <div class="myOrder"><span class="gericht-cart">${cart[i].name} ${cart[i].quantity}</span></div>
-  `
+         <div class="myOrder"><span class="gericht-cart">${cart[i].name}</span></div>
+         <div class="myOrder-quantity"> <i onclick="minusQuantity(${i})" class='icon-quantity bx  bx-minus'></i>  ${cart[i].quantity}x  <i onclick="plusQuantity(${i})" class='icon-quantity bx  bx-plus'></i> 
+         <div class="price">${cart[i].quantity_price}</div>  </div> `
 }

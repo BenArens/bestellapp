@@ -148,8 +148,10 @@ h5{
 }
 
 #cart{
+    gap: 10px;
     display: flex;
     flex-direction: column;
+    user-select: none;
 }
 
 .empty-cart {
@@ -159,4 +161,23 @@ h5{
 
 .empty-cart img{
     margin-top: 40px;
+}
+
+.myOrder {
+    font-weight: bold;
+}
+.myOrder-quantity {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    color: #0000008c;
+}
+
+.icon-quantity{
+    border: 1px solid #0000000a;
+    padding: 3px;
+    color: #fb7f03;
+}
+.icon-quantity:hover{
+    cursor: pointer;
 }

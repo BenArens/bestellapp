@@ -27,10 +27,13 @@ function renderCart(){
     
     for (let i = 0; i < cart.length; i++){
         if (cart[i].empty == false) {
+            calculatePrice(i)
+            
             cartRef.innerHTML += getCartTemplate(i);
         }
          
     }
+    calulateTotal()
 }
 
 //Diese funktion fügt das ausgewählte gerichte (objekte) zu dem Array "cart" hinzu
@@ -65,3 +68,28 @@ function addToCart(index){
     }
  }
 
+ function plusQuantity(index){
+    cart[index].quantity++
+    calculatePrice(index)
+    renderCart()
+ }
+
+ 
+ function minusQuantity(index){
+    cart[index].quantity--
+    calculatePrice(index)
+    renderCart()
+ }
+
+
+ function calculatePrice(index){
+    let pricePerUnit = cart[index].price;
+    let calculatedprice = pricePerUnit * cart[index].quantity;
+    cart[index].quantity_price = calculatedprice.toFixed(2); 
+ }
+
+ function calulateTotal(){
+    for (let i = 0; i < cart.length; i++) {
+        total = total + cart[i].quantity_price;
+ }
+}
