@@ -1,4 +1,10 @@
 
+//Wird beim Seitenaufruf geladen
+window.addEventListener("load", emptyCart);
+window.addEventListener("load", renderGerichte);
+
+
+
 //Hier wird du den Array "gerichte" iterriert
 function renderGerichte(){
     let gerichteRef = document.getElementById('gerichte'); 
@@ -15,9 +21,10 @@ function renderGerichte(){
 //Hier wird durch den Array "cart" iterriert. Durch die if Bedingung wird sichergestellt, dass das Objekt
 //"empty cart" nicht geladen wird. 
 function renderCart(){
+    
     let cartRef = document.getElementById('cart');
     cartRef.innerHTML =''; 
-     
+    
     for (let i = 0; i < cart.length; i++){
         if (cart[i].empty == false) {
             cartRef.innerHTML += getCartTemplate(i);
@@ -50,3 +57,11 @@ function addToCart(index){
         } 
     }
  }
+
+ function emptyCart(){
+    if (cart.length < 2 ){
+    let cartRefempty = document.getElementById('cart');
+    cartRefempty.innerHTML ='<div class="empty-cart"> <img src="./assets/img/emptyCart.svg" alt="emptyCart"></div> <div class="empty-cart">Dein Warenkob ist leer, bitte füge Bestellungen hinzu.</div> '; 
+    }
+ }
+
