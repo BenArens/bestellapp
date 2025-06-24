@@ -1,3 +1,4 @@
+let total = 0;
 
 //Wird beim Seitenaufruf geladen
 window.addEventListener("load", emptyCart);
@@ -28,12 +29,11 @@ function renderCart(){
     for (let i = 0; i < cart.length; i++){
         if (cart[i].empty == false) {
             calculatePrice(i)
-            
             cartRef.innerHTML += getCartTemplate(i);
         }
          
     }
-    calulateTotal()
+    calulateTotal();
 }
 
 //Diese funktion fügt das ausgewählte gerichte (objekte) zu dem Array "cart" hinzu
@@ -63,6 +63,7 @@ function addToCart(index){
 
  function emptyCart(){
     if (cart.length < 2 ){
+    
     let cartRefempty = document.getElementById('cart');
     cartRefempty.innerHTML ='<div class="empty-cart"> <img src="./assets/img/emptyCart.svg" alt="emptyCart"></div> <div class="empty-cart">Dein Warenkob ist leer, bitte füge Bestellungen hinzu.</div> '; 
     }
@@ -89,7 +90,14 @@ function addToCart(index){
  }
 
  function calulateTotal(){
+    let totalRef = document.getElementById('total');
+    totalRef.classList.add('total-container');
+    totalRef.innerHTML ='';
+    total = 0;
+    
     for (let i = 0; i < cart.length; i++) {
-        total = total + cart[i].quantity_price;
+       total +=  parseFloat(cart[i].quantity_price);
+       totalRef.innerHTML = getTotalTemplate();
  }
+   
 }

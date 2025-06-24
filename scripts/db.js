@@ -1,4 +1,4 @@
-let total = 0;
+
 
 let gerichte = [
     {
@@ -29,6 +29,13 @@ let gerichte = [
         "quantity_price": 0,
         "added": false
     }
+    // {
+    //     "name": "Pumbas Döschen",
+    //     "description": "Lecker Döschen",
+    //     "price": 50.99,
+    //     "quantity_price": 0, 
+    //     "added": false
+    // }
 ];
 
 let cart = [
@@ -37,6 +44,7 @@ let cart = [
         "description": "",
         "price": 0,
         "quantity": 0,
+        "quantity_price": 0,
         "empty": true
     }
 
