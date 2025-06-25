@@ -12,7 +12,6 @@ body{
     position: relative;
     margin: 0 auto;
     background-color: white;
-    height: 100vh;
     max-width: 1400px;
 }
 header {
@@ -171,6 +170,7 @@ h5{
     align-items: center;
     gap: 18px;
     color: #0000008c;
+    justify-content: flex-start;
 }
 
 .icon-quantity{
@@ -217,4 +217,14 @@ footer {
     justify-content: center;
     padding: 20px;
     align-items: center;
+}
+
+.icon-trash{
+    margin-left: 10%;
+    font-size: 16px;
+    color: #000000;
+    cursor: pointer;
+}
+.icon-trash:hover{
+    color: #404040;
 }

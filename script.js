@@ -65,6 +65,7 @@ function addToCart(index){
     if (cart.length < 2 ){
     
     let cartRefempty = document.getElementById('cart');
+    cartRefempty.innerHTML = ``;
     cartRefempty.innerHTML ='<div class="empty-cart"> <img src="./assets/img/emptyCart.svg" alt="emptyCart"></div> <div class="empty-cart">Dein Warenkob ist leer, bitte füge Bestellungen hinzu.</div> '; 
     }
  }
@@ -100,4 +101,11 @@ function addToCart(index){
        totalRef.innerHTML = getTotalTemplate();
  }
    
+}
+
+function removeItem(i){
+    cart.splice(i,1);
+    emptyCart();
+    renderCart();
+
 }
