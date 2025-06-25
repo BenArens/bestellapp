@@ -183,8 +183,9 @@ h5{
 }
 
 .total-container {
-    margin-top: 20px;
+    margin-top: 70px;
     display: flex;
+    flex-direction: column;
     gap: 10px;
     padding-top: 10px;
     border-top: 1px solid grey;
@@ -194,4 +195,26 @@ h5{
     font-weight: bold;
     color: #FB7F03;
 }
-
+.total-button {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    background-color: #FB7F03;
+    text-align: center;
+    padding: 10px 10px;
+    border-radius: 6px;
+}
+.total-button:hover{
+    background-color: #fb9228;
+}
+footer {
+    display: flex;
+    height: 109px;
+    background-color: #FB7F03;
+    position: relative;
+    margin-top: 50px;
+    z-index: 3;
+    width: 100%;
+    justify-content: center;
+    padding: 20px;
+    align-items: center;
+}

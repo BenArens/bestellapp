@@ -16,10 +16,11 @@ function getCartTemplate(i){
   return `
          <div class="myOrder"><span class="gericht-cart">${cart[i].name}</span></div>
          <div class="myOrder-quantity"> <i onclick="minusQuantity(${i})" class='icon-quantity bx  bx-minus'></i>  ${cart[i].quantity}x  <i onclick="plusQuantity(${i})" class='icon-quantity bx  bx-plus'></i> 
-         <div class="price">${cart[i].quantity_price}</div>  </div>
+         <div class="price">${cart[i].quantity_price}€</div>  </div>
          `
 }
 
 function getTotalTemplate(){
-    return `Summe: <span class="total">${total.toFixed(2)}€</span>`
+    return `<div class="total-price" >Summe: <span class="total">${total.toFixed(2)}€</span></div>
+    <a href="#" class="total-button">Jetzt bestellen </a>`
 }

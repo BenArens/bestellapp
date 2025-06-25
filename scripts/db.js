@@ -1,5 +1,3 @@
-
-
 let gerichte = [
     {
         "name": "Pizza Krabben ",
@@ -44,3 +42,8 @@ let cart = [
     }
 
 ];
+
+let checkout = [
+    "total" = 0, 
+    "shipment" = true //5€
+]
