@@ -22,5 +22,5 @@ function getCartTemplate(i){
 
 function getTotalTemplate(){
     return `<div class="total-price" >Summe: <span class="total">${total.toFixed(2)}€</span></div>
-    <a href="#" class="total-button">Jetzt bestellen </a>`
+    <a href="#" class="total-button" onclick="orderCompleted()" >Jetzt bestellen </a>`
 }

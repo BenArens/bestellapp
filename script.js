@@ -112,3 +112,11 @@ function removeItem(i){
     cart.splice(i,1);  
     renderCart();
 }
+
+function orderCompleted(){
+    let cartRef = document.getElementById('cart');
+    cartRef.innerHTML=`<img src="./assets/img/orderComplete.png" alt="Bestellung abgeschlossen"> <p>Vielen Dank für Deine Bestellung, wir wünschen guten Appetit!</p>`;
+    let totalRef = document.getElementById('total');
+    totalRef.classList.remove('total-container');
+    totalRef.innerHTML = ``;
+}

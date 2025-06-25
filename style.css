@@ -228,3 +228,7 @@ footer {
 .icon-trash:hover{
     color: #404040;
 }
+
+#cart p{
+    text-align: center;
+}
