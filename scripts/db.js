@@ -44,6 +44,8 @@ let cart = [
 ];
 
 let checkout = [
-    "total" = 0, 
-    "shipment" = true //5€
+    {
+        "total" : 0, 
+        "shipment" : true 
+    }
 ]
