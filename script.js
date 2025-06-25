@@ -27,13 +27,15 @@ function renderCart(){
     cartRef.innerHTML =''; 
     
     for (let i = 0; i < cart.length; i++){
-        if (cart[i].empty == false) {
+        if (cart[i].empty == false && cart[i].added ==true) {
             calculatePrice(i)
             cartRef.innerHTML += getCartTemplate(i);
         }
          
     }
+    
     calulateTotal();
+    emptyCart();
 }
 
 //Diese funktion fügt das ausgewählte gerichte (objekte) zu dem Array "cart" hinzu
@@ -42,7 +44,7 @@ function addToCart(index){
     
     if (gerichte[index].added == false){
         gerichte[index].added = true;
-        cart.push({name: gerichte[index].name, description: gerichte[index].description, price: gerichte[index].price, quantity: 0, empty: false});
+        cart.push({name: gerichte[index].name, description: gerichte[index].description, price: gerichte[index].price, quantity: 0, added: gerichte[index].added ,empty: false});
         updateQuantity(index);
     } else {
         updateQuantity(index);
@@ -63,6 +65,9 @@ function addToCart(index){
 
  function emptyCart(){
     if (cart.length < 2 ){
+    let totalRef = document.getElementById('total');
+    totalRef.classList.remove('total-container');
+    totalRef.innerHTML = ``;
     
     let cartRefempty = document.getElementById('cart');
     cartRefempty.innerHTML = ``;
@@ -104,8 +109,16 @@ function addToCart(index){
 }
 
 function removeItem(i){
+    
+    for (let index = 0; index < gerichte.length; index++) {
+        if (cart[i].name == gerichte[index].name ) {
+            gerichte[index].added = false;
+            cart[i].added = false;
+            
+        }
+        
+    }
     cart.splice(i,1);
-    emptyCart();
+    
     renderCart();
-
 }

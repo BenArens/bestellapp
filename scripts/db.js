@@ -26,7 +26,7 @@ let gerichte = [
     {
         "name": "Pumbas Döschen",
         "description": "Lecker Döschen",
-        "price": 50.99,
+        "price": 5.99,
         "added": false
     }
 ];
