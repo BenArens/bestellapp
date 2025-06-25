@@ -10,12 +10,10 @@ window.addEventListener("load", renderGerichte);
 function renderGerichte(){
     let gerichteRef = document.getElementById('gerichte'); 
     gerichteRef.innerHTML = '';
-    //localStorage
 
     for (let i = 0; i < gerichte.length; i++) {
         gerichteRef.innerHTML += getGerichteTemplate(i); 
     }
-
 }
 
 
@@ -31,9 +29,7 @@ function renderCart(){
             calculatePrice(i)
             cartRef.innerHTML += getCartTemplate(i);
         }
-         
     }
-    
     calulateTotal();
     emptyCart();
 }
@@ -41,7 +37,6 @@ function renderCart(){
 //Diese funktion fügt das ausgewählte gerichte (objekte) zu dem Array "cart" hinzu
 // Die Menge, "quantity" wird erst mit dem wert 0 gepusht
 function addToCart(index){
-    
     if (gerichte[index].added == false){
         gerichte[index].added = true;
         cart.push({name: gerichte[index].name, description: gerichte[index].description, price: gerichte[index].price, quantity: 0, added: gerichte[index].added ,empty: false});
@@ -49,7 +44,6 @@ function addToCart(index){
     } else {
         updateQuantity(index);
     }
-    
     renderCart();
 }
 
@@ -108,17 +102,13 @@ function addToCart(index){
    
 }
 
-function removeItem(i){
-    
+function removeItem(i){  
     for (let index = 0; index < gerichte.length; index++) {
         if (cart[i].name == gerichte[index].name ) {
             gerichte[index].added = false;
-            cart[i].added = false;
-            
-        }
-        
+            cart[i].added = false;        
+        }      
     }
-    cart.splice(i,1);
-    
+    cart.splice(i,1);  
     renderCart();
 }
