@@ -1,4 +1,4 @@
-let total = 0;
+// let total = 0;
 
 //Wird beim Seitenaufruf geladen
 window.addEventListener("load", emptyCart);
@@ -98,10 +98,10 @@ function addToCart(index){
     let totalRef = document.getElementById('total');
     totalRef.classList.add('total-container');
     totalRef.innerHTML ='';
-    total = 0;
+    checkout[0].total = 0;
     
     for (let i = 0; i < cart.length; i++) {
-       total +=  parseFloat(cart[i].quantity_price);
+       checkout[0].total +=  parseFloat(cart[i].quantity_price);
        totalRef.innerHTML = getTotalTemplate();
  }
    
