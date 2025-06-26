@@ -238,7 +238,7 @@ footer {
     display: none;
 }
 
-@media (max-width: 650px){
+@media (max-width: 930px){
 .desktop-hidden{
     display: block;
 }    
@@ -278,5 +278,9 @@ footer{
 .mobile-cart-icon {
     font-size: 29px;
     color: #FB7F03;
+}
+.empty-cart img {
+    height: 282px;
+    width: auto;
 }
 }
