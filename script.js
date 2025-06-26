@@ -79,7 +79,12 @@ function addToCart(index){
  function minusQuantity(index){
     cart[index].quantity--
     calculatePrice(index)
-    renderCart()
+
+    if (cart[index].quantity < 1) {
+       removeItem(index);
+    } else{
+        renderCart();
+    }
  }
 
 
