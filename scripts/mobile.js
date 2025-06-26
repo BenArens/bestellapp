@@ -1,4 +1,3 @@
-
 function toggleMobileCart(){
    let cartAbsoluteRef = document.getElementById('cart-absolute'); 
    cartAbsoluteRef.classList.toggle('hidden-mobile');
