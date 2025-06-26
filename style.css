@@ -166,6 +166,7 @@ h5{
     font-weight: bold;
 }
 .myOrder-quantity {
+    position: relative;
     display: flex;
     align-items: center;
     gap: 18px;
@@ -188,7 +189,6 @@ h5{
     flex-direction: column;
     gap: 10px;
     padding-top: 10px;
-    border-top: 1px solid grey;
 }
 
 .total {
@@ -220,7 +220,8 @@ footer {
 }
 
 .icon-trash{
-    margin-left: 10%;
+    position: absolute;
+    right: 5%;
     font-size: 16px;
     color: #000000;
     cursor: pointer;
@@ -231,4 +232,51 @@ footer {
 
 #cart p{
     text-align: center;
+}
+
+.desktop-hidden{
+    display: none;
+}
+
+@media (max-width: 650px){
+.desktop-hidden{
+    display: block;
+}    
+.hidden-mobile{
+    display: none;
+}
+
+.cart-absolute {
+    max-width: unset;
+    position: sticky;
+    top: 20%;
+    z-index: 1;
+    width: 100%;
+    height: 0px;
+}
+.meine-gerichte {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+}
+footer{
+    margin-top: 0;
+}
+.mobile-cart {
+    display: flex;
+    position: sticky;
+    bottom: 0%;
+    z-index: 20;
+    width: 100%;
+    gap: 10px;
+    justify-content: center;
+    padding: 10px;
+    border: 2px solid orange;
+    background-color: white;
+    cursor: pointer;
+}
+.mobile-cart-icon {
+    font-size: 29px;
+    color: #FB7F03;
+}
 }

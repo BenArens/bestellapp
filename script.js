@@ -104,7 +104,7 @@ function addToCart(index){
        checkout[0].total +=  parseFloat(cart[i].quantity_price);
        totalRef.innerHTML = getTotalTemplate();
  }
-   
+   calculateShipment();
 }
 
 function removeItem(i){  
@@ -124,4 +124,14 @@ function orderCompleted(){
     let totalRef = document.getElementById('total');
     totalRef.classList.remove('total-container');
     totalRef.innerHTML = ``;
+}
+
+
+function calculateShipment(){
+    let totalRef = document.getElementById('total');
+    totalRef.innerHTML ='';
+    if (checkout[0].shipment == true) {
+        checkout[0].totalShipment = checkout[0].total + 5;
+        totalRef.innerHTML = getTotalTemplate();
+    }
 }

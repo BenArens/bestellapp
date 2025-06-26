@@ -12,7 +12,7 @@
     <header class="header">
         <img class="logo" src="./assets/img/logo.png" alt="Logo Bestellapp">
     </header>
-     <div class="cart-absolute">
+     <div class="cart-absolute hidden-mobile">
             <div class="cart">
                 <h2>Warenkorb</h2>
                 <div class="divider-cart"></div>
@@ -51,11 +51,16 @@
       
     </div>
 
+    <div id="mobile-cart" class="mobile-cart desktop-hidden">
+        <h2 class="cart-heading">Warenkorb</h2>
+        <i class='bx  bx-cart mobile-cart-icon'></i> 
+    </div>
+
     <footer>
         <img src="./assets/img/logo.png" alt="" class="logo" >
     </footer>
 
-    
+    <script src="./scripts/mobile.js"></script>
     <script src="./script.js"></script>
     <script src="./scripts/db.js"></script>
     <script src="./scripts/template.js"></script>

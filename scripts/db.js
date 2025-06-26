@@ -46,6 +46,7 @@ let cart = [
 let checkout = [
     {
         "total" : 0, 
+        "totalShipment": 0,
         "shipment" : true 
     }
 ]

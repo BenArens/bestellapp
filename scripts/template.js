@@ -21,6 +21,6 @@ function getCartTemplate(i){
 }
 
 function getTotalTemplate(){
-    return `<div class="total-price" >Summe: <span class="total">${checkout[0].total.toFixed(2)}€</span></div>
+    return `<div class="divider-cart"></div> <div class="total-price" >Summe: <span>${checkout[0].total.toFixed(2)}€</span><br>Versand: 5€ <br> <span class="total"> Gesamt: ${checkout[0].totalShipment}</span> </div>
     <a href="#" class="total-button" onclick="orderCompleted()" >Jetzt bestellen </a>`
 }
