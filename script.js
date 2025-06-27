@@ -1,14 +1,14 @@
 //Will be loaded when the page is called up
 window.addEventListener("load", emptyCart);
-window.addEventListener("load", renderGerichte);
+window.addEventListener("load", renderMeals);
 
-//Here you iterate the “gerichte” array
-function renderGerichte(){
-    let gerichteRef = document.getElementById('gerichte'); 
-    gerichteRef.innerHTML = '';
+//Here you iterate the “meals” array
+function renderMeals(){
+    let mealsRef = document.getElementById('meals'); 
+    mealsRef.innerHTML = '';
 
-    for (let i = 0; i < gerichte.length; i++) {
-        gerichteRef.innerHTML += getGerichteTemplate(i); 
+    for (let i = 0; i < meals.length; i++) {
+        mealsRef.innerHTML += getMealsTemplate(i); 
     }
 }
 
@@ -32,9 +32,9 @@ function renderCart(){
 //This function adds the selected dishes (objects) to the “cart” array
 // The quantity is only pushed with the value 0
 function addToCart(index){
-    if (gerichte[index].added == false){
-        gerichte[index].added = true;
-        cart.push({name: gerichte[index].name, description: gerichte[index].description, price: gerichte[index].price, quantity: 0, added: gerichte[index].added ,empty: false});
+    if (meals[index].added == false){
+        meals[index].added = true;
+        cart.push({name: meals[index].name, description: meals[index].description, price: meals[index].price, quantity: 0, added: meals[index].added ,empty: false});
         updateQuantity(index);
     } else {
         updateQuantity(index);
@@ -46,7 +46,7 @@ function addToCart(index){
 // Thanks to the if condition only for the article clicked on again
  function updateQuantity(index){
     for (let i = 1; i < cart.length; i++) {
-        if (gerichte[index].added == true && gerichte[index].name === cart[i].name ){
+        if (meals[index].added == true && meals[index].name === cart[i].name ){
             cart[i].quantity++
         } 
     }
@@ -107,9 +107,9 @@ function addToCart(index){
 
 //Removes an item from the shopping cart
 function removeItem(i){  
-    for (let index = 0; index < gerichte.length; index++) {
-        if (cart[i].name == gerichte[index].name ) {
-            gerichte[index].added = false;
+    for (let index = 0; index < meals.length; index++) {
+        if (cart[i].name == meals[index].name ) {
+            meals[index].added = false;
             cart[i].added = false;        
         }      
     }
@@ -137,12 +137,12 @@ function calculateShipment(){
     }
 }
 
-//Empty the shopping cart and set gerichte[i].added to false again
+//Empty the shopping cart and set meals[i].added to false again
 function clearCart(){
     for (let index = 0;cart.length > 1 ; index++) {
         cart.pop();
     }
-    for (let index = 0; index < gerichte.length; index++) {
-        gerichte[index].added = false;
+    for (let index = 0; index < meals.length; index++) {
+        meals[index].added = false;
     }
 }

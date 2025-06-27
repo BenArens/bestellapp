@@ -1,4 +1,4 @@
-let gerichte = [
+let meals = [
     {
         "name": "Pizza Krabben ",
         "description": "Mit Krabben und Peperoni",
