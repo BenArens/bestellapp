@@ -249,7 +249,7 @@ footer {
 .cart-absolute {
     max-width: unset;
     position: sticky;
-    top: 20%;
+    top: 0%;
     z-index: 1;
     width: 100%;
     height: 0px;

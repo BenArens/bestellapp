@@ -1,12 +1,8 @@
-// let total = 0;
-
-//Wird beim Seitenaufruf geladen
+//Will be loaded when the page is called up
 window.addEventListener("load", emptyCart);
 window.addEventListener("load", renderGerichte);
 
-
-
-//Hier wird du den Array "gerichte" iterriert
+//Here you iterate the “gerichte” array
 function renderGerichte(){
     let gerichteRef = document.getElementById('gerichte'); 
     gerichteRef.innerHTML = '';
@@ -16,9 +12,8 @@ function renderGerichte(){
     }
 }
 
-
-//Hier wird durch den Array "cart" iterriert. Durch die if Bedingung wird sichergestellt, dass das Objekt
-//"empty cart" nicht geladen wird. 
+//This iterates through the "cart" array. The if condition ensures that the object
+//empty cart" is not loaded.
 function renderCart(){
     
     let cartRef = document.getElementById('cart');
@@ -34,8 +29,8 @@ function renderCart(){
     emptyCart();
 }
 
-//Diese funktion fügt das ausgewählte gerichte (objekte) zu dem Array "cart" hinzu
-// Die Menge, "quantity" wird erst mit dem wert 0 gepusht
+//This function adds the selected dishes (objects) to the “cart” array
+// The quantity is only pushed with the value 0
 function addToCart(index){
     if (gerichte[index].added == false){
         gerichte[index].added = true;
@@ -47,8 +42,8 @@ function addToCart(index){
     renderCart();
 }
 
-//Hier wird die Menge "quantity" um 1 erhöt. Die if-Bedingung stellt sicher, das bei mehrfacher Produktauswahl die Anzahl im Warenkorb erhöht wird.
-// Dank der if-Bedingung nur bei dem erneut angeklickten Artikel
+//Here the quantity is increased by 1. The if condition ensures that the quantity in the shopping cart is increased if multiple products are selected.
+// Thanks to the if condition only for the article clicked on again
  function updateQuantity(index){
     for (let i = 1; i < cart.length; i++) {
         if (gerichte[index].added == true && gerichte[index].name === cart[i].name ){
@@ -57,6 +52,7 @@ function addToCart(index){
     }
  }
 
+ //This function empties the shopping cart
  function emptyCart(){
     if (cart.length < 2 ){
     let totalRef = document.getElementById('total');
@@ -69,13 +65,14 @@ function addToCart(index){
     }
  }
 
+ //Increases the quantity of the item added to the shopping cart
  function plusQuantity(index){
     cart[index].quantity++
     calculatePrice(index)
     renderCart()
  }
 
- 
+ //Reduces the quantity of the item added to the shopping cart
  function minusQuantity(index){
     cart[index].quantity--
     calculatePrice(index)
@@ -87,13 +84,14 @@ function addToCart(index){
     }
  }
 
-
+//Calculates the total price at item level
  function calculatePrice(index){
     let pricePerUnit = cart[index].price;
     let calculatedprice = pricePerUnit * cart[index].quantity;
     cart[index].quantity_price = calculatedprice.toFixed(2); 
  }
 
+//Calculates the total price across all items
  function calulateTotal(){
     let totalRef = document.getElementById('total');
     totalRef.classList.add('total-container');
@@ -107,6 +105,7 @@ function addToCart(index){
    calculateShipment();
 }
 
+//Removes an item from the shopping cart
 function removeItem(i){  
     for (let index = 0; index < gerichte.length; index++) {
         if (cart[i].name == gerichte[index].name ) {
@@ -118,20 +117,32 @@ function removeItem(i){
     renderCart();
 }
 
+//Thanks page after order
 function orderCompleted(){
     let cartRef = document.getElementById('cart');
     cartRef.innerHTML=`<img src="./assets/img/orderComplete.png" alt="Bestellung abgeschlossen"> <p>Vielen Dank, deine Testbestellun wurde vorgenommen!</p>`;
     let totalRef = document.getElementById('total');
     totalRef.classList.remove('total-container');
     totalRef.innerHTML = ``;
+     clearCart();
 }
 
-
+//Calculate the total price with shipping costs
 function calculateShipment(){
     let totalRef = document.getElementById('total');
     totalRef.innerHTML ='';
     if (checkout[0].shipment == true) {
         checkout[0].totalShipment = checkout[0].total + 5;
         totalRef.innerHTML = getTotalTemplate();
+    }
+}
+
+//Empty the shopping cart and set gerichte[i].added to false again
+function clearCart(){
+    for (let index = 0;cart.length > 1 ; index++) {
+        cart.pop();
+    }
+    for (let index = 0; index < gerichte.length; index++) {
+        gerichte[index].added = false;
     }
 }
