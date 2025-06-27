@@ -283,4 +283,8 @@ footer{
     height: 282px;
     width: auto;
 }
+
+.fixoverflow-y{
+    overflow-y: hidden;
+}
 }
